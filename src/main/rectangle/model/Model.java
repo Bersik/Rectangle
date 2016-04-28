@@ -40,6 +40,8 @@ public class Model {
     }
 
     public void setA(int a) {
+        if (a < 0)
+            throw new IllegalArgumentException("a should be > 0");
         this.a = a;
     }
 
@@ -48,6 +50,8 @@ public class Model {
     }
 
     public void setB(int b) {
+        if (b < 0)
+            throw new IllegalArgumentException("b should be > 0");
         this.b = b;
     }
 }

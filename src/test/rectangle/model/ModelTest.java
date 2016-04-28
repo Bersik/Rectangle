@@ -1,22 +1,23 @@
-package rectangle.tests;
+package rectangle.model;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import rectangle.model.Model;
 
 import java.util.Arrays;
 import java.util.Collection;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Serhii Kisilchuk
  */
 @RunWith(Parameterized.class)
 public class ModelTest {
+    public static final double ACCURACY = 0.1;
+
     private static Model model;
     private int a;
     private int b;
@@ -54,7 +55,7 @@ public class ModelTest {
 
     @Test
     public void diagonal() throws Exception {
-        assertEquals(model.diagonal(), resultDiagonal, 0.5);
+        assertEquals(model.diagonal(), resultDiagonal, ACCURACY);
     }
 
     @Test

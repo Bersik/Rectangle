@@ -14,6 +14,8 @@ public class View {
     public static final String RECTANGLE_MESSAGE = "Rectangle: side a = %d; side b = %d\n";
     public static final String DIAGONAL_MESSAGE = "Diagonal = %f\n";
     public static final String PERIMETER_MESSAGE = "Perimeter = %d\n";
+    public static final String WRONG_NUMBER_MESSAGE = "Wrong number! Number should be > 0. Repeat please! ";
+
 
     public void printMessage(String message) {
         System.out.println(message);

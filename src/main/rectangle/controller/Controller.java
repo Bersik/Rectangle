@@ -34,10 +34,21 @@ public class Controller {
     // The Utility methods
     public int inputIntValueWithScanner(Scanner sc, String side) {
         view.formatMessage(View.INPUT_SIDE_MESSAGE, side);
-        while (!sc.hasNextInt()) {
-            view.formatMessage(View.WRONG_INPUT_INT_DATA + View.INPUT_SIDE_MESSAGE, side);
-            sc.next();
+        int num;
+        while (true) {
+            if (!sc.hasNextInt()) {
+                view.formatMessage(View.WRONG_INPUT_INT_DATA + View.INPUT_SIDE_MESSAGE, side);
+                sc.next();
+            } else {
+                num = sc.nextInt();
+                if (num > 0)
+                    break;
+                else {
+                    view.formatMessage(View.WRONG_NUMBER_MESSAGE + View.INPUT_SIDE_MESSAGE, side);
+                }
+            }
+
         }
-        return sc.nextInt();
+        return num;
     }
 }
